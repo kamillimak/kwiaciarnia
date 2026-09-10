@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zielnik — wersja Impeccable</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="switcher mono">
+  <span>Wersja:</span>
+  <a href="../../index.html">Oryginał</a>
+  <a href="../impeccable/index.html" class="is-active">Impeccable</a>
+  <a href="../glassmorphism/index.html">Glassmorphism</a>
+  <a href="../cafe/index.html">Cafe</a>
+</div>
+
+<a class="skip-link" href="#glowna-tresc">Przejdź do treści</a>
+
+<header class="nav" data-reveal>
+  <div class="nav__inner">
+    <a href="#" class="nav__mark">Zielnik</a>
+    <nav class="nav__links" aria-label="Nawigacja główna">
+      <a href="#katalog">Katalog</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="btn btn--primary nav__cta">Zamów bukiet</a>
+    <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#katalog">Katalog</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="btn btn--primary">Zamów bukiet</a>
+  </div>
+</header>
+
+<main id="glowna-tresc">
+
+  <section class="hero">
+    <p class="eyebrow mono" data-reveal>Katalog nr 07 &middot; Żórawina k. Wrocławia</p>
+    <h1 data-reveal>Kwiaty<br><span>bez owijania</span><br>w bawełnę.</h1>
+    <p class="hero__lede" data-reveal>Zielnik komponuje bukiety z tego, co danego dnia przywiozą lokalni hodowcy — bez chłodni pełnej czekających tygodniami łodyg.</p>
+    <div class="hero__ctas" data-reveal>
+      <a href="#katalog" class="btn btn--primary">Zobacz katalog</a>
+      <a href="#bukiet-dnia" class="btn btn--outline">Bukiet dnia →</a>
+    </div>
+  </section>
+
+  <section class="featured" id="bukiet-dnia">
+    <div class="featured__grid">
+      <div class="featured__photo" data-reveal>
+        <img src="../../assets/bukiety/foto/bukiet-9.jpg" alt="Bukiet dnia — protea, róża, storczyk, hortensja, lilia" loading="lazy" width="512" height="512">
+      </div>
+      <div class="featured__info" data-reveal>
+        <span class="eyebrow mono">Okaz nr 003 &middot; cały rok</span>
+        <h2>Bukiet dnia</h2>
+        <p class="featured__latin mono">Protea &middot; róża &middot; storczyk &middot; hortensja &middot; lilia</p>
+        <p class="featured__desc">To, co danego dnia najlepiej pachnie w chłodni. Zdjęcie prosto z naszego stołu w Żórawinie — zawsze inny, zawsze świeży.</p>
+        <span class="featured__price mono">245 zł</span>
+        <a href="#kontakt" class="btn btn--primary">Zamów ten bukiet</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="katalog" id="katalog">
+    <div class="katalog__header">
+      <p class="eyebrow mono" data-reveal>Katalog</p>
+      <h2 data-reveal>Dziewięć okazów<br><span>na ten tydzień</span></h2>
+    </div>
+    <div class="katalog__grid">
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">01</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-1.png" alt="Mini bukiet z czterech czerwonych róż i eukaliptusa" loading="lazy" width="265" height="355"></div>
+        <h3>Krótka wiadomość</h3>
+        <p>Cztery czerwone róże, gałązka eukaliptusa, len zamiast wstążki.</p>
+        <div class="k-card__meta mono"><span>Wiązany</span><span>90 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">02</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-2.png" alt="Tuzin czerwonych róż owinięty w papier rzemieślniczy" loading="lazy" width="371" height="381"></div>
+        <h3>Klasyczny tuzin</h3>
+        <p>Dwanaście czerwonych róż, papier rzemieślniczy, sznurek.</p>
+        <div class="k-card__meta mono"><span>Owijany</span><span>180 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">03</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-3.png" alt="Bukiet trzydziestu czerwonych róż z eukaliptusem i paprocią" loading="lazy" width="448" height="386"></div>
+        <h3>Czerwień, która nie prosi o pozwolenie</h3>
+        <p>Trzydzieści czerwonych róż, eukaliptus, paproć. Sam jest okazją.</p>
+        <div class="k-card__meta mono"><span>Duży</span><span>320 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">04</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-4.png" alt="Mini tulipany w słoiku" loading="lazy" width="234" height="296"></div>
+        <h3>Wiosna w słoiku</h3>
+        <p>Garść tulipanów w słoiku po dżemie, gotowe na parapet.</p>
+        <div class="k-card__meta mono"><span>W słoiku</span><span>70 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">05</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-5.png" alt="Kolorowe tulipany wiązane sznurkiem" loading="lazy" width="294" height="329"></div>
+        <h3>Pierwsze ciepłe dni</h3>
+        <p>Tulipany w różowo-pomarańczowo-fioletowej gamie.</p>
+        <div class="k-card__meta mono"><span>Wiązany</span><span>85 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">06</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-6.png" alt="Obfity bukiet tulipanów w cynkowym wiadrze" loading="lazy" width="419" height="336"></div>
+        <h3>Wiosenna obfitość</h3>
+        <p>Ponad trzydzieści tulipanów w cynkowym wiadrze.</p>
+        <div class="k-card__meta mono"><span>Duży</span><span>140 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">07</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-7.png" alt="Minimalistyczna kompozycja z jednym storczykiem" loading="lazy" width="331" height="339"></div>
+        <h3>Cisza w donicy</h3>
+        <p>Jeden storczyk, garść liści, gałązka bruni.</p>
+        <div class="k-card__meta mono"><span>Cały rok</span><span>180 zł</span></div>
+      </article>
+
+      <article class="k-card" data-reveal>
+        <span class="k-card__num mono">08</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-8.png" alt="Kompozycja z protei, czerwonej róży, ostróżki i jaskra" loading="lazy" width="372" height="362"></div>
+        <h3>Ciemna elegancja</h3>
+        <p>Protea, czerwona róża, ostróżka i jaskier w czarnym wazonie.</p>
+        <div class="k-card__meta mono"><span>Kompozycja</span><span>210 zł</span></div>
+      </article>
+
+      <article class="k-card k-card--wide" data-reveal>
+        <span class="k-card__num mono">09</span>
+        <div class="k-card__plate"><img src="../../assets/bukiety/cutout/bukiet-9.png" alt="Wielka kompozycja z protei, róży, storczyka, hortensji i lilii" loading="lazy" width="454" height="383"></div>
+        <div class="k-card__wide-info">
+          <h3>Wielki bukiet</h3>
+          <p>Ta sama kompozycja, co nasz Bukiet dnia — do zamówienia na konkretny termin.</p>
+          <div class="k-card__meta mono"><span>Kompozycja</span><span>245 zł</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="gallery" id="galeria">
+    <p class="eyebrow mono" data-reveal>Galeria</p>
+    <h2 data-reveal>Prosto ze stołu,<br><span>nie z renderu</span></h2>
+    <div class="gallery__row">
+      <img data-reveal src="../../assets/bukiety/foto/bukiet-3.jpg" alt="Bukiet czerwonych róż na drewnianym stole" loading="lazy" width="512" height="512">
+      <img data-reveal src="../../assets/bukiety/foto/bukiet-6.jpg" alt="Tulipany w cynkowym wiadrze" loading="lazy" width="512" height="512">
+      <img data-reveal src="../../assets/bukiety/foto/bukiet-8.jpg" alt="Ciemna kompozycja z protei" loading="lazy" width="512" height="512">
+      <img data-reveal src="../../assets/bukiety/foto/bukiet-1.jpg" alt="Cztery czerwone róże na stole florystki" loading="lazy" width="512" height="512">
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer" id="kontakt">
+  <div class="footer__inner">
+    <div>
+      <span class="footer__mark">Zielnik</span>
+      <p>Kwiaciarnia Anna Rak, Żórawina k. Wrocławia</p>
+    </div>
+    <div>
+      <h4 class="mono">Kontakt</h4>
+      <p>aleja Niepodległości 15A, 55-020 Żórawina</p>
+      <p><a href="tel:+48691316569">691 316 569</a> &middot; <a href="mailto:czesc@zielnik.pl">czesc@zielnik.pl</a></p>
+    </div>
+    <div>
+      <h4 class="mono">Godziny</h4>
+      <p>Poniedziałek – sobota: od 8:00</p>
+      <p>Niedziela: nieczynne</p>
+    </div>
+  </div>
+  <div class="footer__bottom mono">© 2026 Zielnik</div>
+</footer>
+
+<script src="../shared.js"></script>
+</body>
+</html>

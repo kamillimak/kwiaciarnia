@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zielnik — wersja Glassmorphism</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-blur" aria-hidden="true"></div>
+
+<div class="switcher mono">
+  <span>Wersja:</span>
+  <a href="../../index.html">Oryginał</a>
+  <a href="../impeccable/index.html">Impeccable</a>
+  <a href="../glassmorphism/index.html" class="is-active">Glassmorphism</a>
+  <a href="../cafe/index.html">Cafe</a>
+</div>
+
+<a class="skip-link" href="#glowna-tresc">Przejdź do treści</a>
+
+<header class="nav" data-reveal>
+  <div class="nav__inner glass">
+    <a href="#" class="nav__mark">Zielnik</a>
+    <nav class="nav__links" aria-label="Nawigacja główna">
+      <a href="#katalog">Katalog</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="btn btn--primary nav__cta">Zamów bukiet</a>
+    <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu glass" id="mobile-menu">
+    <a href="#katalog">Katalog</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="btn btn--primary">Zamów bukiet</a>
+  </div>
+</header>
+
+<main id="glowna-tresc">
+
+  <section class="hero">
+    <div class="hero__panel glass" data-reveal>
+      <p class="eyebrow mono">Żórawina k. Wrocławia</p>
+      <h1>Kwiaty za szkłem,<br>nie za ladą.</h1>
+      <p class="hero__lede">Zielnik komponuje bukiety z tego, co danego dnia przywiozą lokalni hodowcy — przejrzyste, lekkie, bez zbędnego owijania.</p>
+      <div class="hero__ctas">
+        <a href="#katalog" class="btn btn--primary">Zobacz katalog</a>
+        <a href="#bukiet-dnia" class="btn btn--ghost">Bukiet dnia →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured" id="bukiet-dnia">
+    <div class="featured__card glass" data-reveal>
+      <div class="featured__photo">
+        <img src="../../assets/bukiety/foto/bukiet-9.jpg" alt="Bukiet dnia — protea, róża, storczyk, hortensja, lilia" loading="lazy" width="512" height="512">
+      </div>
+      <div class="featured__info">
+        <span class="eyebrow mono">Okaz nr 003 &middot; cały rok</span>
+        <h2>Bukiet dnia</h2>
+        <p class="featured__latin mono">Protea &middot; róża &middot; storczyk &middot; hortensja &middot; lilia</p>
+        <p class="featured__desc">To, co danego dnia najlepiej pachnie w chłodni. Zdjęcie prosto z naszego stołu — zawsze inny, zawsze świeży.</p>
+        <span class="featured__price mono">245 zł</span>
+        <a href="#kontakt" class="btn btn--primary">Zamów ten bukiet</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="katalog" id="katalog">
+    <div class="katalog__header" data-reveal>
+      <p class="eyebrow mono">Katalog</p>
+      <h2>Dziewięć okazów, jedna szklana półka</h2>
+    </div>
+
+    <div class="bento">
+
+      <article class="bento-card glass bento-card--big" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-9.png" alt="Wielka kompozycja z protei, róży, storczyka, hortensji i lilii" loading="lazy" width="454" height="383"></div>
+        <div class="bento-card__info">
+          <h3>Wielki bukiet</h3>
+          <p>Ta sama kompozycja, co Bukiet dnia — do zamówienia na konkretny termin.</p>
+          <div class="bento-card__meta mono"><span>Kompozycja</span><span>245 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass bento-card--wide" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-3.png" alt="Bukiet trzydziestu czerwonych róż z eukaliptusem i paprocią" loading="lazy" width="448" height="386"></div>
+        <div class="bento-card__info">
+          <h3>Czerwień, która nie prosi o pozwolenie</h3>
+          <p>Trzydzieści czerwonych róż, eukaliptus, paproć.</p>
+          <div class="bento-card__meta mono"><span>Duży</span><span>320 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-1.png" alt="Mini bukiet z czterech czerwonych róż i eukaliptusa" loading="lazy" width="265" height="355"></div>
+        <div class="bento-card__info">
+          <h3>Krótka wiadomość</h3>
+          <div class="bento-card__meta mono"><span>Wiązany</span><span>90 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-2.png" alt="Tuzin czerwonych róż owinięty w papier rzemieślniczy" loading="lazy" width="371" height="381"></div>
+        <div class="bento-card__info">
+          <h3>Klasyczny tuzin</h3>
+          <div class="bento-card__meta mono"><span>Owijany</span><span>180 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass bento-card--tall" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-8.png" alt="Kompozycja z protei, czerwonej róży, ostróżki i jaskra" loading="lazy" width="372" height="362"></div>
+        <div class="bento-card__info">
+          <h3>Ciemna elegancja</h3>
+          <p>Protea, czerwona róża, ostróżka i jaskier w czarnym wazonie.</p>
+          <div class="bento-card__meta mono"><span>Kompozycja</span><span>210 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-4.png" alt="Mini tulipany w słoiku" loading="lazy" width="234" height="296"></div>
+        <div class="bento-card__info">
+          <h3>Wiosna w słoiku</h3>
+          <div class="bento-card__meta mono"><span>W słoiku</span><span>70 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-5.png" alt="Kolorowe tulipany wiązane sznurkiem" loading="lazy" width="294" height="329"></div>
+        <div class="bento-card__info">
+          <h3>Pierwsze ciepłe dni</h3>
+          <div class="bento-card__meta mono"><span>Wiązany</span><span>85 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-6.png" alt="Obfity bukiet tulipanów w cynkowym wiadrze" loading="lazy" width="419" height="336"></div>
+        <div class="bento-card__info">
+          <h3>Wiosenna obfitość</h3>
+          <div class="bento-card__meta mono"><span>Duży</span><span>140 zł</span></div>
+        </div>
+      </article>
+
+      <article class="bento-card glass" data-reveal>
+        <div class="bento-card__plate"><img src="../../assets/bukiety/cutout/bukiet-7.png" alt="Minimalistyczna kompozycja z jednym storczykiem" loading="lazy" width="331" height="339"></div>
+        <div class="bento-card__info">
+          <h3>Cisza w donicy</h3>
+          <div class="bento-card__meta mono"><span>Cały rok</span><span>180 zł</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="gallery" id="galeria">
+    <div class="gallery__header" data-reveal>
+      <p class="eyebrow mono">Galeria</p>
+      <h2>Prosto ze stołu, nie z renderu</h2>
+    </div>
+    <div class="gallery__row">
+      <div class="gallery__frame glass" data-reveal><img src="../../assets/bukiety/foto/bukiet-3.jpg" alt="Bukiet czerwonych róż na drewnianym stole" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__frame glass" data-reveal><img src="../../assets/bukiety/foto/bukiet-6.jpg" alt="Tulipany w cynkowym wiadrze" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__frame glass" data-reveal><img src="../../assets/bukiety/foto/bukiet-1.jpg" alt="Cztery czerwone róże na stole florystki" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__frame glass" data-reveal><img src="../../assets/bukiety/foto/bukiet-8.jpg" alt="Ciemna kompozycja z protei" loading="lazy" width="512" height="512"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer glass" id="kontakt">
+  <div class="footer__inner">
+    <div>
+      <span class="footer__mark">Zielnik</span>
+      <p>Kwiaciarnia Anna Rak, Żórawina k. Wrocławia</p>
+    </div>
+    <div>
+      <h4 class="mono">Kontakt</h4>
+      <p>aleja Niepodległości 15A, 55-020 Żórawina</p>
+      <p><a href="tel:+48691316569">691 316 569</a> &middot; <a href="mailto:czesc@zielnik.pl">czesc@zielnik.pl</a></p>
+    </div>
+    <div>
+      <h4 class="mono">Godziny</h4>
+      <p>Poniedziałek – sobota: od 8:00</p>
+      <p>Niedziela: nieczynne</p>
+    </div>
+  </div>
+  <div class="footer__bottom mono">© 2026 Zielnik</div>
+</footer>
+
+<script src="../shared.js"></script>
+</body>
+</html>

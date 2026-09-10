@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zielnik — kwiaciarnia autorska, Żórawina k. Wrocławia</title>
+<meta name="description" content="Zielnik to kwiaciarnia autorska w Żórawinie pod Wrocławiem. Komponujemy bukiety z kwiatów zebranych tego samego dnia — bez chłodni, bez foremek.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Libre+Franklin:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=11">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.184.0/build/three.module.js",
+    "three/addons/controls/OrbitControls.js": "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+    "three/addons/loaders/GLTFLoader.js": "https://unpkg.com/three@0.184.0/examples/jsm/loaders/GLTFLoader.js"
+  },
+  "integrity": {
+    "https://unpkg.com/three@0.184.0/build/three.module.js": "sha384-8FCZ1eVO6it4+pbec2aDtnTrwjWXZLJRC+MAGCIPDgsYnUrl/E0A2YlF8ioMKI/J",
+    "https://unpkg.com/three@0.184.0/build/three.core.js": "sha384-dw2ooPewaEIrAgl6oFDBmmBWCE9oW9LxRGcfwZ0hLvEprzo202wXl7vCYHRlSnOT",
+    "https://unpkg.com/three@0.184.0/examples/jsm/controls/OrbitControls.js": "sha384-4rziNxOBZKQ69i+w+f89KJ55TCYquwchVbByQwmaOeIOXdOU2PLDn3kOfXHwIJC9"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<a class="skip-link" href="#glowna-tresc">Przejdź do treści</a>
+
+<header class="nav" data-reveal>
+  <div class="nav__inner">
+    <a href="#" class="nav__mark">
+      <span class="nav__mark-main">Zielnik</span>
+      <span class="nav__mark-sub mono">dziennik kwiatowy</span>
+    </a>
+    <nav class="nav__links" aria-label="Nawigacja główna">
+      <a href="#dziennik">Dziennik</a>
+      <a href="#katalog">Katalog</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#bukiet-3d">Bukiet dnia</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#bukiet-3d" class="btn btn--brass nav__cta">Zamów bukiet<span class="cart-count mono" data-cart-count hidden>0</span></a>
+    <button class="nav__toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#dziennik">Dziennik</a>
+    <a href="#katalog">Katalog</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#bukiet-3d">Bukiet dnia</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#bukiet-3d" class="btn btn--brass">Zamów bukiet<span class="cart-count mono" data-cart-count hidden>0</span></a>
+  </div>
+</header>
+
+<main id="glowna-tresc">
+
+  <!-- COVER -->
+  <section class="cover" id="dziennik">
+    <video class="cover__video" autoplay muted loop playsinline preload="auto" poster="assets/cover-bg.jpg" aria-hidden="true">
+      <source src="assets/Florist_creating_bouquet_1080p_20260910085349%20-%20Trim.mp4" type="video/mp4">
+    </video>
+    <div class="cover__scrim" aria-hidden="true"></div>
+    <div class="cover__inner">
+      <div class="cover__meta mono" data-reveal>
+        <span>Zielnik</span><span>Dziennik kwiatowy</span><span>Żórawina</span>
+      </div>
+      <p class="eyebrow mono cover__eyebrow" data-reveal>Wpis 001 · 30 sierpnia</p>
+      <h1 class="cover__title" data-reveal>Kwiaty, które <em>pamiętają</em> porę roku.</h1>
+      <p class="cover__lede" data-reveal>
+        Każdy okaz, który przechodzi przez nasz stół, trafia tu — z datą, porą roku i tym,
+        komu trafił w ręce. Przewiń, jakbyś kartkował zielnik.
+      </p>
+      <div class="cover__ctas" data-reveal>
+        <a href="#bukiet-3d" class="btn btn--brass">Zamów bukiet</a>
+        <a href="#spread-012" class="btn btn--ghost-ink">Zacznij czytać ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE 3D SPECIMEN — Top 3 slider -->
+  <section class="viewer-block" id="bukiet-3d" data-reveal>
+    <div class="viewer-block__frame">
+      <div class="viewer-block__canvas-wrap">
+        <span class="viewer-block__rank mono" data-slide-rank>Top 1</span>
+        <div id="bouquet-viewer" class="viewer-block__canvas" role="img" aria-label="Obrotowy podgląd 3D — przeciągnij, aby obrócić, przewiń, aby przybliżyć">
+          <p class="viewer-block__loading mono">ładowanie okazu…</p>
+          <p class="viewer-block__hint mono">przeciągnij, by obrócić</p>
+        </div>
+        <div class="viewer-block__nav">
+          <button type="button" class="viewer-block__arrow viewer-block__arrow--prev" aria-label="Poprzedni bukiet">‹</button>
+          <div class="viewer-block__dots" role="tablist" aria-label="Wybierz bukiet z Top 3">
+            <button type="button" class="viewer-block__dot is-active" aria-label="Bukiet 1"></button>
+            <button type="button" class="viewer-block__dot" aria-label="Bukiet 2"></button>
+            <button type="button" class="viewer-block__dot" aria-label="Bukiet 3"></button>
+          </div>
+          <button type="button" class="viewer-block__arrow viewer-block__arrow--next" aria-label="Następny bukiet">›</button>
+        </div>
+      </div>
+      <div class="viewer-block__info">
+        <span class="eyebrow mono" data-slide-okaz>Duży bukiet · wiosna</span>
+        <h2 class="viewer-block__title" data-slide-title>Wiosenna obfitość</h2>
+        <p class="viewer-block__latin mono" data-slide-latin>Tulipa — ponad 30 tulipanów</p>
+        <p class="viewer-block__desc" data-slide-desc>
+          Ponad trzydzieści tulipanów w donicy. Bukiet, który sam wypełnia stół —
+          bez dodatkowego wazonu.
+        </p>
+        <span class="viewer-block__price mono" data-slide-price>140 zł</span>
+        <a href="#kontakt" class="btn btn--ink">Zamów ten bukiet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee mono" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Paeonia lactiflora — Dahlia pinnata — Ranunculus asiaticus — Helleborus niger — Anemone coronaria — Eucalyptus cinerea — Rosa 'Boscobel' — Delphinium elatum — </span>
+      <span>Paeonia lactiflora — Dahlia pinnata — Ranunculus asiaticus — Helleborus niger — Anemone coronaria — Eucalyptus cinerea — Rosa 'Boscobel' — Delphinium elatum — </span>
+    </div>
+  </div>
+
+  <!-- WORKSHOP: real interior photo -->
+  <section class="workshop-block" data-reveal>
+    <img class="workshop-block__photo" src="assets/bukiety/foto/bukiet-2.jpg" alt="Stół pracowni Zielnika — róże, narzędzia i papier do owijania" loading="lazy" width="512" height="512">
+    <div class="workshop-block__caption">
+      <span class="eyebrow mono">Prosto z Żórawiny</span>
+      <p>Tak wygląda nasza pracownia przy alei Niepodległości — bez filtrów, bez inscenizacji.</p>
+    </div>
+  </section>
+
+  <!-- SPREAD 017 -->
+  <article class="spread" id="spread-012" data-reveal data-product="czerwien-ktora-nie-prosi" role="button" tabindex="0">
+    <div class="spread__plate">
+      <span class="spread__plate-tag mono" aria-hidden="true">Okaz 017</span>
+      <img class="spread__photo" src="assets/bukiety/cutout/bukiet-3.png" alt="Bukiet trzydziestu czerwonych róż z eukaliptusem i paprocią" loading="lazy" width="448" height="386">
+      <button type="button" class="quick-add quick-add--spread" data-quick-add="czerwien-ktora-nie-prosi" aria-label="Dodaj do koszyka: Czerwień, która nie prosi o pozwolenie"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+    </div>
+    <div class="spread__info">
+      <span class="mono spread__number">Okaz nr 017 · cały rok</span>
+      <h3 class="spread__name">Czerwień, która nie prosi o pozwolenie</h3>
+      <p class="spread__latin mono">Rosa — ok. 30 róż, eukaliptus, paproć</p>
+      <p class="spread__desc">Trzydzieści czerwonych róż związanych jedną wstążką, otulonych eukaliptusem i paprocią. Bukiet, który nie potrzebuje okazji — sam nią jest.</p>
+      <span class="spread__price mono">320 zł</span>
+    </div>
+  </article>
+
+  <!-- MARGINALIA -->
+  <aside class="marginalia marginalia--right" data-reveal>
+    <p>Notatka na marginesie: u nas kwiaty mają średnio <strong>36 godzin</strong> od ścięcia do wazonu. Dlatego pachną i więdną tak, jak powinny — po swojemu, nie po transporcie.</p>
+  </aside>
+
+  <!-- SPREAD 029 (reversed) -->
+  <article class="spread spread--reverse" data-reveal data-product="cisza-w-donicy" role="button" tabindex="0">
+    <div class="spread__plate">
+      <span class="spread__plate-tag mono" aria-hidden="true">Okaz 029</span>
+      <img class="spread__photo" src="assets/bukiety/cutout/bukiet-7.png" alt="Minimalistyczna kompozycja z jednym storczykiem i liśćmi egzotycznymi" loading="lazy" width="331" height="339">
+      <button type="button" class="quick-add quick-add--spread" data-quick-add="cisza-w-donicy" aria-label="Dodaj do koszyka: Cisza w donicy"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+    </div>
+    <div class="spread__info">
+      <span class="mono spread__number">Okaz nr 029 · cały rok</span>
+      <h3 class="spread__name">Cisza w donicy</h3>
+      <p class="spread__latin mono">Phalaenopsis i liście egzotyczne</p>
+      <p class="spread__desc">Jeden kwiat storczyka, garść liści i gałązka bruni — więcej przestrzeni niż kwiatów. Dla kogoś, kto woli ciszę od tłumu.</p>
+      <span class="spread__price mono">180 zł</span>
+    </div>
+  </article>
+
+  <!-- KATALOG grid: the rest of the herbarium, in short -->
+  <section class="katalog" id="katalog">
+    <div class="katalog__header">
+      <p class="eyebrow mono" data-reveal>Więcej okazów</p>
+      <h2 class="katalog__title" data-reveal>Reszta zielnika, <em>w skrócie</em></h2>
+      <p class="katalog__intro" data-reveal>
+        Nie każdy okaz dostaje własną stronę — te trafiają tu, w skróconej formie.
+        Wszystkie dostępne od ręki, w Żórawinie i okolicach Wrocławia.
+      </p>
+    </div>
+    <div class="katalog__grid">
+      <article class="katalog-card" data-reveal data-product="krotka-wiadomosc" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-1.png" alt="Mini bukiet z czterech czerwonych róż i eukaliptusa" loading="lazy" width="265" height="355">
+          <button type="button" class="quick-add" data-quick-add="krotka-wiadomosc" aria-label="Dodaj do koszyka: Krótka wiadomość"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Krótka wiadomość</h3>
+          <p>Cztery czerwone róże, gałązka eukaliptusa, len zamiast wstążki.</p>
+          <div class="katalog-card__meta mono"><span>Wiązany</span><span>90 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card" data-reveal data-product="klasyczny-tuzin" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-2.png" alt="Tuzin czerwonych róż owinięty w papier rzemieślniczy" loading="lazy" width="371" height="381">
+          <button type="button" class="quick-add" data-quick-add="klasyczny-tuzin" aria-label="Dodaj do koszyka: Klasyczny tuzin"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Klasyczny tuzin</h3>
+          <p>Dwanaście czerwonych róż, papier rzemieślniczy, sznurek.</p>
+          <div class="katalog-card__meta mono"><span>Owijany</span><span>180 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card" data-reveal data-product="wiosna-w-sloiku" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-4.png" alt="Mini tulipany w słoiku" loading="lazy" width="234" height="296">
+          <button type="button" class="quick-add" data-quick-add="wiosna-w-sloiku" aria-label="Dodaj do koszyka: Wiosna w słoiku"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Wiosna w słoiku</h3>
+          <p>Garść tulipanów w słoiku po dżemie. Gotowe, żeby postawić na parapecie.</p>
+          <div class="katalog-card__meta mono"><span>W słoiku</span><span>70 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card" data-reveal data-product="pierwsze-cieple-dni" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-5.png" alt="Kolorowe tulipany wiązane sznurkiem" loading="lazy" width="294" height="329">
+          <button type="button" class="quick-add" data-quick-add="pierwsze-cieple-dni" aria-label="Dodaj do koszyka: Pierwsze ciepłe dni"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Pierwsze ciepłe dni</h3>
+          <p>Tulipany w różowo-pomarańczowo-fioletowej gamie, wiązane sznurkiem.</p>
+          <div class="katalog-card__meta mono"><span>Wiązany</span><span>85 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card" data-reveal data-product="wiosenna-obfitosc" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-6.png" alt="Obfity bukiet tulipanów w cynkowym wiadrze" loading="lazy" width="419" height="336">
+          <button type="button" class="quick-add" data-quick-add="wiosenna-obfitosc" aria-label="Dodaj do koszyka: Wiosenna obfitość"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Wiosenna obfitość</h3>
+          <p>Ponad trzydzieści tulipanów w cynkowym wiadrze. Zajmuje cały stół.</p>
+          <div class="katalog-card__meta mono"><span>Duży</span><span>140 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card" data-reveal data-product="ciemna-elegancja" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-8.png" alt="Kompozycja z protei, czerwonej róży, ostróżki i jaskra w czarnym wazonie" loading="lazy" width="372" height="362">
+          <button type="button" class="quick-add" data-quick-add="ciemna-elegancja" aria-label="Dodaj do koszyka: Ciemna elegancja"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Ciemna elegancja</h3>
+          <p>Protea, czerwona róża, ostróżka i jaskier w czarnym wazonie.</p>
+          <div class="katalog-card__meta mono"><span>Kompozycja</span><span>210 zł</span></div>
+        </div>
+      </article>
+      <article class="katalog-card katalog-card--wide" data-reveal data-product="wielki-bukiet" role="button" tabindex="0">
+        <div class="katalog-card__plate">
+          <img src="assets/bukiety/cutout/bukiet-9.png" alt="Wielka kompozycja z protei, róży, storczyka, hortensji i lilii" loading="lazy" width="454" height="383">
+          <button type="button" class="quick-add" data-quick-add="wielki-bukiet" aria-label="Dodaj do koszyka: Wielki bukiet"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+        </div>
+        <div class="katalog-card__info">
+          <h3>Wielki bukiet</h3>
+          <p>Ta sama kompozycja, co nasz Bukiet dnia — protea, róża, storczyk, hortensja, lilia. Do zamówienia na konkretny termin.</p>
+          <div class="katalog-card__meta mono"><span>Kompozycja</span><span>245 zł</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- MARGINALIA 2 -->
+  <aside class="marginalia marginalia--left" data-reveal>
+    <p>Notatka na marginesie: Zielnik prowadzi jedna para rąk — Anna Rak, z pracowni przy alei Niepodległości w Żórawinie.</p>
+  </aside>
+
+  <!-- GALLERY: real photography, proving it's not a render -->
+  <section class="gallery" id="galeria">
+    <p class="eyebrow mono gallery__eyebrow" data-reveal>Galeria</p>
+    <h2 class="gallery__title" data-reveal>Zdjęcia z naszego stołu, <em>nie z renderu</em></h2>
+    <div class="gallery__grid">
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-3.jpg" alt="Bukiet trzydziestu czerwonych róż na drewnianym stole" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-6.jpg" alt="Tulipany w cynkowym wiadrze w pracowni" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-1.jpg" alt="Cztery czerwone róże na stole florystki" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-8.jpg" alt="Ciemna kompozycja z protei i róż w czarnym wazonie" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-2.jpg" alt="Tuzin róż owinięty w papier na stole" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-5.jpg" alt="Kolorowe tulipany związane sznurkiem" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-7.jpg" alt="Minimalistyczna kompozycja ze storczykiem" loading="lazy" width="512" height="512"></div>
+      <div class="gallery__item" data-reveal><img src="assets/bukiety/foto/bukiet-4.jpg" alt="Tulipany w słoiku na parapecie" loading="lazy" width="512" height="512"></div>
+    </div>
+  </section>
+
+  <!-- SPREAD 003 signature, points back to the 3D viewer -->
+  <article class="spread spread--reverse spread--signature" data-reveal data-product="wielki-bukiet" role="button" tabindex="0">
+    <div class="spread__plate spread__plate--photo">
+      <span class="spread__plate-tag mono" aria-hidden="true">Prosto z pracowni</span>
+      <img class="spread__photo" src="assets/bukiety/foto/bukiet-9.jpg" alt="Prawdziwy, luksusowy bukiet dnia skomponowany w pracowni Zielnika, Żórawina" loading="lazy" width="512" height="512">
+      <button type="button" class="quick-add quick-add--spread" data-quick-add="wielki-bukiet" aria-label="Dodaj do koszyka: Bukiet dnia"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg></button>
+    </div>
+    <div class="spread__info">
+      <span class="mono spread__number">Okaz nr 003 · cały rok</span>
+      <h3 class="spread__name">Bukiet dnia</h3>
+      <p class="spread__latin mono">Protea &middot; róża &middot; storczyk &middot; hortensja &middot; lilia</p>
+      <p class="spread__desc">Nasz stały okaz — to, co danego dnia najlepiej pachnie w chłodni. Zdjęcie prosto z naszego stołu w Żórawinie, nie z renderu. Zawsze inny, zawsze świeży.</p>
+      <span class="spread__price mono">245 zł</span>
+      <a href="#bukiet-3d" class="spread__3d-link mono">↑ zobacz obrotowy podgląd 3D</a>
+    </div>
+  </article>
+
+  <!-- PROCESS ribbon -->
+  <section class="process-ribbon" id="jak-to-dziala" data-reveal>
+    <p class="eyebrow mono">Ścieżka zamówienia</p>
+    <ol class="process-ribbon__list">
+      <li><span class="process-ribbon__dot" aria-hidden="true"></span>Wybierz okaz z dziennika albo napisz, jaki nastrój ma mieć bukiet.</li>
+      <li><span class="process-ribbon__dot" aria-hidden="true"></span>Florystka komponuje go tego samego dnia, z kwiatów zebranych rano.</li>
+      <li><span class="process-ribbon__dot" aria-hidden="true"></span>Dostarczamy w Żórawinie i okolicach Wrocławia w trzygodzinnym oknie, zawsze do 20:00.</li>
+    </ol>
+    <p class="process-ribbon__note mono">Zamówienia złożone do 14:00 dostarczamy jeszcze tego samego dnia. Dostawa gratis od 250 zł.</p>
+  </section>
+
+  <!-- OKAZJE: three ways we keep flowers in your life -->
+  <section class="okazje" id="okazje" data-reveal>
+    <p class="eyebrow mono">Nie tylko na już</p>
+    <h2 class="okazje__title">Trzy sposoby, w jakie <em>towarzyszymy</em></h2>
+    <div class="okazje__grid">
+      <article class="okazje-card">
+        <span class="okazje-card__num mono">01</span>
+        <h3>Śluby</h3>
+        <p>Bukiet ślubny, dekoracje stołów, kwiaty do fryzury — planowane z wyprzedzeniem, komponowane w dniu ceremonii.</p>
+        <span class="mono">Wycena indywidualna</span>
+      </article>
+      <article class="okazje-card">
+        <span class="okazje-card__num mono">02</span>
+        <h3>Wydarzenia</h3>
+        <p>Otwarcia, kolacje firmowe, prywatne przyjęcia — luźne, sezonowe kompozycje dopasowane do wnętrza.</p>
+        <span class="mono">Od 240 zł</span>
+      </article>
+      <article class="okazje-card">
+        <span class="okazje-card__num mono">03</span>
+        <h3>Subskrypcja</h3>
+        <p>Stały bukiet dostarczany co tydzień lub co dwa tygodnie, do domu albo do biura w Żórawinie i okolicy.</p>
+        <span class="mono">Od 60 zł / tydz.</span>
+      </article>
+    </div>
+  </section>
+
+  <!-- APPENDIX: notatki z dostaw -->
+  <section class="appendix" id="notatki" data-reveal>
+    <p class="eyebrow mono">Notatki z dostaw</p>
+    <ul class="appendix__list">
+      <li><p>Bukiet dotarł, zanim zdążyłam się ubrać do wyjścia z domu. Pachniało całe mieszkanie.</p><span class="mono">Marta, Wrocław-Krzyki · 14.02</span></li>
+      <li><p>Poprosiłam o coś „nieoczywistego na wesele". Dostałam dalie i trawy zamiast białych róż. Idealnie.</p><span class="mono">Kasia, Bielany Wrocławskie · 08.06</span></li>
+      <li><p>Subskrypcja bukietu co czwartek to była najlepsza decyzja tej jesieni.</p><span class="mono">Tomasz, Żórawina · 21.11</span></li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-panel" data-reveal>
+    <h2>Bukiet na ten tydzień<br>już czeka na numer w zielniku.</h2>
+    <p>Zamów do 14:00, a dostarczymy jeszcze dziś.</p>
+    <a href="#kontakt" class="btn btn--ink">Zamów teraz</a>
+  </section>
+
+</main>
+
+<footer class="footer" id="kontakt">
+  <svg class="footer__border" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><rect width="1200" height="40" fill="url(#ill-border)"/></svg>
+  <div class="footer__inner">
+    <div class="footer__col footer__col--brand">
+      <span class="footer__mark">Zielnik</span>
+      <p class="mono">dziennik kwiatowy &middot; Kwiaciarnia Anna Rak, Żórawina</p>
+      <a href="https://instagram.com" class="footer__social mono">Instagram →</a>
+    </div>
+    <div class="footer__col">
+      <h4 class="mono">Kontakt</h4>
+      <p>aleja Niepodległości 15A<br>55-020 Żórawina</p>
+      <p><a href="tel:+48691316569">691 316 569</a></p>
+      <p><a href="mailto:czesc@zielnik.pl">czesc@zielnik.pl</a></p>
+    </div>
+    <div class="footer__col">
+      <h4 class="mono">Godziny</h4>
+      <p>Poniedziałek – sobota: od 8:00</p>
+      <p>Niedziela: nieczynne</p>
+      <p class="footer__hours-note mono">Aktualne godziny zamknięcia — sprawdź w Google Maps.</p>
+    </div>
+  </div>
+  <div class="footer__map">
+    <iframe
+      src="https://www.google.com/maps?q=aleja+Niepodleg%C5%82o%C5%9Bci+15A,+55-020+%C5%BB%C3%B3rawina&output=embed"
+      width="100%" height="220" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Mapa — Zielnik / Kwiaciarnia Anna Rak, aleja Niepodległości 15A, Żórawina"></iframe>
+  </div>
+  <div class="footer__bottom">
+    <p>© 2026 Zielnik. Wszystkie okazy zebrane lokalnie.</p>
+  </div>
+</footer>
+
+<!-- PRODUCT MODAL: size picker with live price summary -->
+<div class="modal" id="bukiet-modal" hidden>
+  <div class="modal__backdrop" data-modal-dismiss></div>
+  <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button type="button" class="modal__close" data-modal-dismiss aria-label="Zamknij okno">&times;</button>
+    <div class="modal__media">
+      <img data-modal-img src="" alt="">
+    </div>
+    <div class="modal__body">
+      <span class="eyebrow mono" data-modal-tag></span>
+      <h3 class="modal__title" id="modal-title" data-modal-title></h3>
+      <p class="modal__desc" data-modal-desc></p>
+
+      <div class="modal__group">
+        <span class="modal__group-label mono">Rozmiar</span>
+        <div class="modal__pills" data-modal-sizes role="radiogroup" aria-label="Wybierz rozmiar">
+          <!-- size pills + "Specjalne" injected by js/modal.js -->
+        </div>
+        <p class="modal__group-detail" data-modal-size-detail></p>
+      </div>
+
+      <div class="modal__group">
+        <span class="modal__group-label mono">Odbiór</span>
+        <div class="modal__pills" data-modal-fulfillment role="radiogroup" aria-label="Sposób odbioru">
+          <!-- 3 fulfillment pills injected by js/modal.js -->
+        </div>
+        <p class="modal__group-detail" data-modal-fulfillment-detail></p>
+      </div>
+
+      <div class="modal__summary">
+        <span class="modal__summary-label mono">Podsumowanie</span>
+        <span class="modal__summary-price mono" data-modal-price></span>
+      </div>
+      <p class="modal__summary-note mono" data-modal-summary-note></p>
+
+      <div class="modal__actions" data-modal-actions-standard>
+        <button type="button" class="btn btn--ghost-ink" data-modal-cart>Do koszyka</button>
+        <button type="button" class="btn btn--brass" data-modal-checkout>Do kasy</button>
+      </div>
+      <div class="modal__actions" data-modal-actions-custom hidden>
+        <a href="#" class="btn btn--brass" data-modal-inquiry>Zapytaj o wycenę</a>
+      </div>
+      <p class="modal__note mono" data-modal-note aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<!-- botanical line-art library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="ill-ranunculus" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M60 150 C58 120 56 100 60 78"/>
+      <path d="M60 118 C48 122 40 130 34 140"/>
+      <path d="M60 128 C72 130 82 136 88 146"/>
+      <circle cx="60" cy="52" r="8"/>
+      <circle cx="60" cy="52" r="16"/>
+      <circle cx="60" cy="52" r="24"/>
+      <path d="M60 28 C68 34 68 44 60 52 C52 44 52 34 60 28Z"/>
+      <path d="M84 52 C78 60 68 60 60 52 C68 44 78 44 84 52Z"/>
+      <path d="M60 76 C52 70 52 60 60 52 C68 60 68 70 60 76Z"/>
+      <path d="M36 52 C42 44 52 44 60 52 C52 60 42 60 36 52Z"/>
+    </g>
+    <g id="ill-peony" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M60 150 C56 118 58 96 60 80"/>
+      <path d="M60 112 C46 116 38 124 30 132"/>
+      <path d="M60 124 C74 126 84 132 90 142"/>
+      <circle cx="60" cy="48" r="6"/>
+      <path d="M60 48 C48 40 44 26 50 16 C58 22 60 36 60 48Z"/>
+      <path d="M60 48 C72 40 76 26 70 16 C62 22 60 36 60 48Z"/>
+      <path d="M60 48 C46 46 34 36 34 24 C46 22 58 32 60 48Z"/>
+      <path d="M60 48 C74 46 86 36 86 24 C74 22 62 32 60 48Z"/>
+      <path d="M60 48 C50 58 38 60 28 54 C34 44 48 40 60 48Z"/>
+      <path d="M60 48 C70 58 82 60 92 54 C86 44 72 40 60 48Z"/>
+      <path d="M60 48 C54 62 56 74 60 82 C64 74 66 62 60 48Z"/>
+    </g>
+    <g id="ill-dahlia" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M60 150 C58 122 58 100 60 82"/>
+      <path d="M60 116 C48 118 40 124 32 132"/>
+      <path d="M60 128 C72 130 80 136 86 144"/>
+      <circle cx="60" cy="52" r="5"/>
+      <g>
+        <path d="M60 52 L60 20"/>
+        <path d="M60 52 L86 34"/>
+        <path d="M60 52 L94 52"/>
+        <path d="M60 52 L86 70"/>
+        <path d="M60 52 L60 84"/>
+        <path d="M60 52 L34 70"/>
+        <path d="M60 52 L26 52"/>
+        <path d="M60 52 L34 34"/>
+      </g>
+      <circle cx="60" cy="52" r="24" stroke-dasharray="2 5"/>
+    </g>
+    <g id="ill-aster" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+      <path d="M60 150 C58 120 60 98 60 80"/>
+      <path d="M60 118 C50 120 42 126 36 134"/>
+      <path d="M60 130 C70 132 78 138 84 146"/>
+      <circle cx="60" cy="50" r="6" stroke-width="1.6"/>
+      <g stroke-width="1.2">
+        <path d="M60 50 L60 14"/><path d="M60 50 L74 18"/><path d="M60 50 L86 28"/>
+        <path d="M60 50 L96 44"/><path d="M60 50 L96 58"/><path d="M60 50 L86 74"/>
+        <path d="M60 50 L74 84"/><path d="M60 50 L46 84"/><path d="M60 50 L34 74"/>
+        <path d="M60 50 L24 58"/><path d="M60 50 L24 44"/><path d="M60 50 L34 28"/>
+        <path d="M60 50 L46 18"/>
+      </g>
+    </g>
+    <g id="ill-hellebore" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M60 150 C64 120 60 100 46 84 C36 74 32 62 34 50"/>
+      <path d="M46 100 C36 100 28 106 22 114"/>
+      <path d="M40 76 C32 74 24 76 18 82"/>
+      <circle cx="46" cy="84" r="5"/>
+      <path d="M46 84 C36 78 30 84 28 94 C38 96 46 92 46 84Z"/>
+      <path d="M46 84 C56 80 64 84 66 94 C56 98 48 92 46 84Z"/>
+      <path d="M46 84 C40 74 44 64 52 60 C58 68 56 78 46 84Z"/>
+      <path d="M46 84 C42 94 32 100 22 98 C24 88 34 82 46 84Z"/>
+      <path d="M46 84 C52 92 50 102 42 108 C36 100 38 90 46 84Z"/>
+    </g>
+    <g id="ill-rose" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+      <path d="M60 150 C58 120 60 98 60 82"/>
+      <path d="M60 116 C48 120 40 126 32 134"/>
+      <path d="M60 128 C72 130 80 136 86 144"/>
+      <path d="M60 54 C64 48 72 48 74 54 C76 62 66 66 60 62 C50 58 52 46 60 42 C70 38 80 44 80 54 C80 66 66 72 56 66 C44 60 46 44 58 38 C70 34 82 42 82 54"/>
+      <path d="M60 54 C50 44 34 42 24 50 C30 60 46 62 60 54Z"/>
+      <path d="M60 54 C70 42 86 40 96 48 C90 58 74 62 60 54Z"/>
+      <path d="M60 54 C52 66 38 70 28 64 C34 54 48 48 60 54Z"/>
+      <path d="M60 54 C68 66 82 70 92 64 C86 54 72 48 60 54Z"/>
+    </g>
+    <pattern id="ill-border" width="60" height="40" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.9">
+        <path d="M0 20 C10 8 20 8 30 20 C40 32 50 32 60 20"/>
+        <circle cx="30" cy="20" r="2.4" fill="currentColor" stroke="none"/>
+      </g>
+    </pattern>
+  </defs>
+</svg>
+
+<script src="js/main.js?v=3"></script>
+<script src="js/modal.js?v=4"></script>
+<script type="module" src="js/bouquet-viewer.js?v=4"></script>
+</body>
+</html>
