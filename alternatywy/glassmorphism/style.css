@@ -31,9 +31,22 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .bg-blur {
   position: fixed; inset: 0; z-index: -1;
-  background: linear-gradient(rgba(10,14,12,.62), rgba(10,14,12,.72)), url("../../assets/bukiety/foto/bukiet-8.jpg") center 30% / cover no-repeat fixed;
+  overflow: hidden;
   filter: blur(6px) saturate(1.1);
+}
+.bg-blur::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(rgba(10,14,12,.62), rgba(10,14,12,.72));
+}
+.bg-blur__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
   transform: scale(1.08);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bg-blur__video { display: none; }
+  .bg-blur { background: linear-gradient(rgba(10,14,12,.62), rgba(10,14,12,.72)), url("../../assets/bukiety/foto/bukiet-8.jpg") center 30% / cover no-repeat; }
 }
 
 .glass {

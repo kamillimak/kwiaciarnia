@@ -76,14 +76,18 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 @media (max-width: 780px) { .hero { grid-template-columns: 1fr; padding-top: 3rem; } .hero__photo { order: -1; max-width: 380px; margin: 0 auto; } }
 
 /* featured */
-.featured { background: var(--beige); padding: 4rem var(--gutter); }
-.featured__card { max-width: 640px; margin: 0 auto; text-align: center; }
+.featured { position: relative; overflow: hidden; background: var(--coffee-dark); padding: 4rem var(--gutter); }
+.featured__media { position: absolute; inset: 0; z-index: 0; }
+.featured__media video { width: 100%; height: 100%; object-fit: cover; }
+.featured__scrim { position: absolute; inset: 0; background: linear-gradient(rgba(62,43,30,.6), rgba(62,43,30,.8)); }
+@media (prefers-reduced-motion: reduce) { .featured__media video { display: none; } }
+.featured__card { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
 .featured__badge { display: inline-block; background: var(--coffee); color: var(--cream); padding: .4em 1em; border-radius: 999px; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 1.2rem; }
-.featured__card h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 600; color: var(--coffee-dark); margin-bottom: .5rem; }
-.featured__latin { font-size: .82rem; color: var(--coffee); margin-bottom: 1.1rem; }
-.featured__desc { font-size: 1rem; line-height: 1.6; max-width: 46ch; margin: 0 auto 1.6rem; color: rgba(62,43,30,.8); }
+.featured__card h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); font-weight: 600; color: var(--cream); margin-bottom: .5rem; }
+.featured__latin { font-size: .82rem; color: var(--cream); opacity: .85; margin-bottom: 1.1rem; }
+.featured__desc { font-size: 1rem; line-height: 1.6; max-width: 46ch; margin: 0 auto 1.6rem; color: rgba(249,247,245,.85); }
 .featured__row { display: flex; align-items: center; justify-content: center; gap: 1.4rem; flex-wrap: wrap; }
-.featured__price { font-size: 1.3rem; font-weight: 600; color: var(--coffee-dark); }
+.featured__price { font-size: 1.3rem; font-weight: 600; color: var(--cream); }
 
 /* katalog / menu list */
 .katalog { max-width: var(--container); margin: 0 auto; padding: 5rem var(--gutter); }
