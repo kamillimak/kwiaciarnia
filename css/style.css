@@ -111,9 +111,16 @@ em { font-style: italic; color: var(--brass); }
 }
 [data-reveal].is-visible { opacity: 1; transform: none; }
 
+/* ============ VERSION SWITCHER ============ */
+.switcher { position: sticky; top: 0; z-index: 200; background: var(--ink); color: var(--parchment); display: flex; gap: 1rem; align-items: center; padding: .5rem var(--gutter); font-size: .68rem; letter-spacing: .04em; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.switcher span { opacity: .5; }
+.switcher a { flex-shrink: 0; padding: .2rem .6rem; border-radius: 2px; opacity: .7; color: var(--parchment); }
+.switcher a:hover { opacity: 1; }
+.switcher a.is-active { background: var(--brass); color: var(--ink); opacity: 1; }
+
 /* ============ NAV ============ */
 .nav {
-  position: sticky; top: 0; z-index: 100;
+  position: sticky; top: 1.9rem; z-index: 100;
   background: rgba(36,24,18,0.92);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line-on-dark);
